@@ -3,7 +3,7 @@
         <img height="128" class="img-responsive text-center mb-3"
                :src="product.selectedImage == null ? './src/assets/default.png' : product.selectedImage">
           <input ref="file" type="file" style="display: none;" @change="onChange($event)" class="form-control">
-          <button class="btn btn-outline-secondary " type="button" @click="$refs.file.click()">Resim Seç</button>
+          <button class="btn btn-outline-secondary " type="button" @click="$refs.file.click()">Select Image</button>
     </div>
 </template>
 
