@@ -43,6 +43,7 @@ export default {
       productName: null,
       productCount: null,
       productPrice: null,
+      selectedImage: null,
     };
   },
   methods: {
@@ -54,9 +55,21 @@ export default {
           name: this.productName,
           quantity: this.productCount,
           price: this.productPrice,
-          total: this.productPrice * this.quantity,
+          total: parseInt(this.productPrice) * parseInt(this.productCount),
+          selectedImage: this.selectedImage ? this.selectedImage : null,
         });
+
+      this.productName = null;
+      this.productCount = null;
+      this.productPrice = null;
+      this.selectedImage = null;
     },
+  },
+  created() {
+    vm.$on("addedImage", (image) => {
+      this.selectedImage = image;
+      console.log(image);
+    });
   },
 };
 </script>
